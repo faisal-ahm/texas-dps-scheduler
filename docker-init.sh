@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 # Docker initialization script for texas-dps-scheduler
 
 # --- NEW PART ---

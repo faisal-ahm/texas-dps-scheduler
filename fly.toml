@@ -1,15 +1,15 @@
-# fly.toml app configuration file generated for texas-dps-scheduler-tpispq on 2025-09-25T17:57:36Z
+# fly.toml app configuration file generated for texas-dps-scheduler-lively-feather-8514 on 2025-09-25T15:11:49-05:00
 #
 # See https://fly.io/docs/reference/configuration/ for information about how to use this file.
 #
 
-app = 'texas-dps-scheduler-tpispq'
+app = 'texas-dps-scheduler-lively-feather-8514'
 primary_region = 'dfw'
 
 [build]
 
 [http_service]
-  internal_port = 8080
+  internal_port = 3000
   force_https = true
   auto_stop_machines = 'stop'
   auto_start_machines = true
@@ -20,4 +20,3 @@ primary_region = 'dfw'
   memory = '1gb'
   cpu_kind = 'shared'
   cpus = 1
-  memory_mb = 1024

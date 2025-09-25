@@ -31,6 +31,8 @@ RUN apt-get update \
 
 # Copy and set up the initialization script
 COPY docker-init.sh /docker-init.sh
+# Normalize Windows line endings just in case
+RUN sed -i 's/\r$//' /docker-init.sh
 RUN chmod +x /docker-init.sh
 
 USER pptruser
