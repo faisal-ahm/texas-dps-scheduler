@@ -74,7 +74,7 @@ export const getAuthTokenFromBroswer = async (): Promise<string> => {
         await client.send('Network.enable');
 
         const captchaTokenPromise = new Promise((resolve, reject) => {
-            const timeout = setTimeout(() => reject(new Error('Auth token retrieval timed out after 60 seconds')), 60000);
+            const timeout = setTimeout(() => reject(new Error('Auth token retrieval timed out after 60 seconds')), 360000);
 
             client.on('Network.responseReceived', async event => {
                 if (event.response.url === 'https://apptapi.txdpsscheduler.com/api/auth' && event.response.status === 200) {
@@ -95,7 +95,7 @@ export const getAuthTokenFromBroswer = async (): Promise<string> => {
 
         const tryAgainDialog = async (page: Page, retryTime = 0) => {
             log.dev('google catpcha score too low, trying again!');
-            if (retryTime > 10) throw new Error('Captcha token retrieval failled!');
+            if (retryTime > 100) throw new Error('Captcha token retrieval failled!');
             await nodeTimer.setTimeout(_.random(1000, 3000, false));
             await page.click('.v-dialog--active > div > div > button');
             await nodeTimer.setTimeout(_.random(1000, 3000, false));

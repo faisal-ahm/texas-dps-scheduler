@@ -39,5 +39,6 @@ USER pptruser
 
 # Copy the built application from previous stage
 COPY --from=ts-remover /home/container ./
+COPY config.yml ./config.yml
 
 CMD ["/docker-init.sh"]
